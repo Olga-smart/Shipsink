@@ -23,6 +23,7 @@ body {
 /* End General */
 
 /* Navbar */
+/*
 .navbar {
 
 }
@@ -47,6 +48,7 @@ body {
   color: #fff;
   text-decoration: none;
 }
+*/
 /* End Navbar */
 
 /* Navbar 2 */
@@ -77,6 +79,7 @@ body {
 /* End Navbar 2 */
 
 /* Main Screen */
+/*
 .main-screen {
   min-height: 100vh;
   background-image: -webkit-gradient(linear, left top, right top, color-stop(70%, transparent), color-stop(70%, var(--dark-blue)));
@@ -128,16 +131,16 @@ body {
 .main-screen__list-item:nth-child(3) {
   border-left-color: var(--yellow);
 }
+*/
 /* End Main Screen */
 
 /* Main Screen 2 */
-/*
 .main-screen {
   min-height: 100vh;
-  background-image: url(../img/map.png);
+  /* background-image: url(../img/map.png);
   background-repeat: no-repeat;
   background-size: 50%;
-  background-position: bottom center; 
+  background-position: bottom center;  */
   background-color: var(--dark-blue);
 }
 .main-screen__content {
@@ -196,10 +199,203 @@ body {
 .main-screen__form button {
   width: 100%;
 }
-*/
 /* End Main Screen 2 */
 
+/* Continents Animation */
+.continents-animation {
+  position: relative;
+}
+.continents-animation .ship-group {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50px;
+  transform-origin: center;
+  offset-rotate: 0deg;
+  transform: scale(0);
+}
+
+.continents-animation .ship-group-1 {
+  motion-path: path('M659.1,91.6c-19,56.9-102.4,67.2-128.4,121.3c-13.5,28.1-7.9,61.9,4,90.8c11.9,28.9,38.8,46.7,63.8,58.7c22,10.6,90.9,25.6,113,36c10.1,4.8,11.4,92.8,30,114c50,57,26.8,25.3,65,55c18,13.9,52.3,39,33,27c-4.1-2.5,68.2,28.5,113.5,56.7c11.2,7,22.4,13.9,32.4,22.5c10.2,8.7,19,18.9,27.8,29c25.3,29.3,50.6,58.6,75.9,87.9');
+  offset-path: path('M659.1,91.6c-19,56.9-102.4,67.2-128.4,121.3c-13.5,28.1-7.9,61.9,4,90.8c11.9,28.9,38.8,46.7,63.8,58.7c22,10.6,90.9,25.6,113,36c10.1,4.8,11.4,92.8,30,114c50,57,26.8,25.3,65,55c18,13.9,52.3,39,33,27c-4.1-2.5,68.2,28.5,113.5,56.7c11.2,7,22.4,13.9,32.4,22.5c10.2,8.7,19,18.9,27.8,29c25.3,29.3,50.6,58.6,75.9,87.9');
+  animation: move-1 30s linear infinite;
+}
+.continents-animation .ship-group-1 .drop {
+  animation: drop-color-1 30s linear infinite;
+}
+@keyframes move-1 {
+  0% {
+    motion-offset: 0%;
+    offset-distance: 0%;
+    transform: scale(0.2);
+  }
+  13% {
+    transform: scale(1);
+    motion-offset: 40%;
+    offset-distance: 40%;
+  }
+  20% {
+    transform: scale(1);
+    motion-offset: 40%;
+    offset-distance: 40%;
+  }
+  33% {
+    motion-offset: 100%;
+    offset-distance: 100%;
+    transform: scale(0.2);
+  }
+  35% {
+    motion-offset: 100%;
+    offset-distance: 100%;
+    transform: scale(0);
+  }
+  100% {
+    motion-offset: 100%;
+    offset-distance: 100%;
+    transform: scale(0);
+  }
+}
+@keyframes drop-color-1 {
+  0% {
+    fill: #FF010C;
+  }
+  16% {
+    fill: #FF010C;
+  }
+  17% {
+    fill: green;
+  }
+  33% {
+    fill: green;
+  }
+  100% {
+    fill: green;
+  }
+}
+
+.continents-animation .ship-group-2 {
+  motion-path: path('M60.8,562.5c25.6,7.5,53.3,1.6,78-8.4c24.7-10,47.7-23.9,72.6-33.3c67.6-25.7,142.8-16.6,214.1-5c16.7,2.7,37.2,4.1,47-9.7c18.6,16.8,45.7,19.3,70.8,21c6.5,0.4,13.4,0.8,19.4-1.8c12.9-5.6,16.5-21.7,18.5-35.6c1.9-13.1,3.8-26.6,0.2-39.3c-3-10.5-9.5-19.6-13.6-29.8c-8.4-20.8-6-44.1-7.9-66.4c-2.4-29.5-12.3-57.9-17.5-87.1c-5.3-29.9-4.7-63.6,14.8-86.9c12.5-14.9,31.3-23.5,44.2-38.1c11.2-12.7,17.3-29.2,28.3-42');
+  offset-path: path('M60.8,562.5c25.6,7.5,53.3,1.6,78-8.4c24.7-10,47.7-23.9,72.6-33.3c67.6-25.7,142.8-16.6,214.1-5c16.7,2.7,37.2,4.1,47-9.7c18.6,16.8,45.7,19.3,70.8,21c6.5,0.4,13.4,0.8,19.4-1.8c12.9-5.6,16.5-21.7,18.5-35.6c1.9-13.1,3.8-26.6,0.2-39.3c-3-10.5-9.5-19.6-13.6-29.8c-8.4-20.8-6-44.1-7.9-66.4c-2.4-29.5-12.3-57.9-17.5-87.1c-5.3-29.9-4.7-63.6,14.8-86.9c12.5-14.9,31.3-23.5,44.2-38.1c11.2-12.7,17.3-29.2,28.3-42');
+  animation: move-2 30s linear infinite;
+  animation-delay: 10s;
+}
+.continents-animation .ship-group-2 .drop {
+  animation: drop-color-2 30s linear infinite;
+  animation-delay: 10s;
+}
+@keyframes move-2 {
+  0% {
+    motion-offset: 0%;
+    offset-distance: 0%;
+    transform: scale(0.2);
+  }
+  13% {
+    transform: scale(1);
+    motion-offset: 40%;
+    offset-distance: 40%;
+  }
+  20% {
+    transform: scale(1);
+    motion-offset: 40%;
+    offset-distance: 40%;
+  }
+  33% {
+    motion-offset: 100%;
+    offset-distance: 100%;
+    transform: scale(0.2);
+  }
+  35% {
+    motion-offset: 100%;
+    offset-distance: 100%;
+    transform: scale(0);
+  }
+  100% {
+    motion-offset: 100%;
+    offset-distance: 100%;
+    transform: scale(0);
+  }
+}
+@keyframes drop-color-2 {
+  0% {
+    fill: #FF010C;
+  }
+  16% {
+    fill: #FF010C;
+  }
+  17% {
+    fill: green;
+  }
+  33% {
+    fill: green;
+  }
+  100% {
+    fill: green;
+  }
+}
+
+.continents-animation .ship-group-3 {
+  motion-path: path('M1334.5,454.3c-31.4,1.7-61.5,19.5-78,46.3c-19.4,31.4-21,73.6-47.8,99c-27.7,26.4-71.2,24.5-109,19c-30.9-4.5-62.1-10.4-90-24.5S957.3,556.8,948,527c-16.9-54.6,20-111.4,19.9-168.6c-30.6-2.5-59.5,15.1-81.9,36.1c-22.5,21-41.3,46-66.1,64.2c-24.9,18.2-54.6,28.4-83.8,38.4C685,514.6,634,532,582.9,549.5c-50.6,17.3-103.6,34.8-156.5,26.8c-27.5-4.2-53.4-15.1-80-23.5c-81.2-25.5-170-26.1-251.5-1.9c-12.8,3.8-26,8.3-39.2,6.4');
+  offset-path: path('M1334.5,454.3c-31.4,1.7-61.5,19.5-78,46.3c-19.4,31.4-21,73.6-47.8,99c-27.7,26.4-71.2,24.5-109,19c-30.9-4.5-62.1-10.4-90-24.5S957.3,556.8,948,527c-16.9-54.6,20-111.4,19.9-168.6c-30.6-2.5-59.5,15.1-81.9,36.1c-22.5,21-41.3,46-66.1,64.2c-24.9,18.2-54.6,28.4-83.8,38.4C685,514.6,634,532,582.9,549.5c-50.6,17.3-103.6,34.8-156.5,26.8c-27.5-4.2-53.4-15.1-80-23.5c-81.2-25.5-170-26.1-251.5-1.9c-12.8,3.8-26,8.3-39.2,6.4');
+  animation: move-3 30s linear infinite;
+  animation-delay: 20s;
+}
+.continents-animation .ship-group-3 .drop {
+  animation: drop-color-3 30s linear infinite;
+  animation-delay: 20s;
+}
+@keyframes move-3 {
+  0% {
+    motion-offset: 0%;
+    offset-distance: 0%;
+    transform: scale(0.2);
+  }
+  13% {
+    transform: scale(1);
+    motion-offset: 40%;
+    offset-distance: 40%;
+  }
+  20% {
+    transform: scale(1);
+    motion-offset: 40%;
+    offset-distance: 40%;
+  }
+  33% {
+    motion-offset: 100%;
+    offset-distance: 100%;
+    transform: scale(0.2);
+  }
+  35% {
+    motion-offset: 100%;
+    offset-distance: 100%;
+    transform: scale(0);
+  }
+  100% {
+    motion-offset: 100%;
+    offset-distance: 100%;
+    transform: scale(0);
+  }
+}
+@keyframes drop-color-3 {
+  0% {
+    fill: #FF010C;
+  }
+  16% {
+    fill: #FF010C;
+  }
+  17% {
+    fill: green;
+  }
+  33% {
+    fill: green;
+  }
+  100% {
+    fill: green;
+  }
+}
+/* End Continents Animation */
+
 /* Main Screen 3 */
+/*
 .main-screen {
   min-height: 100vh;
   background-image: url(../img/map-3.png);
@@ -264,6 +460,7 @@ body {
 .main-screen__form button {
   width: 100%;
 }
+*/
 /* End Main Screen 3 */
 
 
